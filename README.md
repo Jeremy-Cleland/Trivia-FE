@@ -12,3 +12,7 @@
 - Jeremy Cleland
 
 ![User Schema](./User%20Schema.png)
+
+## Miro Board
+
+[Battle of the Minds Miro](https://miro.com/app/board/uXjVPsy-oME=/?share_link_id=124166728841)

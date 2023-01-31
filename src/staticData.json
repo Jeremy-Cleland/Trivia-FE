@@ -1,0 +1,121 @@
+{
+  "response_code": 0,
+  "results": [
+  {
+  "category": "History",
+  "type": "multiple",
+  "difficulty": "medium",
+  "question": "Which king was killed at the Battle of Bosworth Field in 1485? ",
+  "correct_answer": "Richard III",
+  "incorrect_answers": [
+  "Edward V",
+  "Henry VII",
+  "James I"
+  ]
+  },
+  {
+  "category": "Entertainment: Cartoon & Animations",
+  "type": "multiple",
+  "difficulty": "easy",
+  "question": "Butters Stotch, Pip Pirrup, and Wendy Testaburger are all characters in which long running animated TV series?",
+  "correct_answer": "South Park",
+  "incorrect_answers": [
+  "The Simpsons",
+  "Family Guy",
+  "Bob&#039;s Burgers"
+  ]
+  },
+  {
+  "category": "Geography",
+  "type": "multiple",
+  "difficulty": "medium",
+  "question": "What African country has Portuguese as its official language?",
+  "correct_answer": "Mozambique",
+  "incorrect_answers": [
+  "Botswana",
+  "Gabon",
+  "Togo"
+  ]
+  },
+  {
+  "category": "Entertainment: Video Games",
+  "type": "boolean",
+  "difficulty": "easy",
+  "question": "Big the Cat is a playable character in &quot;Sonic Generations&quot;.",
+  "correct_answer": "False",
+  "incorrect_answers": [
+  "True"
+  ]
+  },
+  {
+  "category": "Entertainment: Television",
+  "type": "multiple",
+  "difficulty": "easy",
+  "question": "In the Star Trek universe, what color is Vulcan blood?",
+  "correct_answer": "Green",
+  "incorrect_answers": [
+  "Blue",
+  "Red",
+  "Purple"
+  ]
+  },
+  {
+  "category": "General Knowledge",
+  "type": "multiple",
+  "difficulty": "medium",
+  "question": "When was Nintendo founded?",
+  "correct_answer": "September 23rd, 1889",
+  "incorrect_answers": [
+  "October 19th, 1891",
+  "March 4th, 1887",
+  "December 27th, 1894"
+  ]
+  },
+  {
+  "category": "Entertainment: Video Games",
+  "type": "multiple",
+  "difficulty": "easy",
+  "question": "In what year was the first &quot;Mass Effect&quot; game released?",
+  "correct_answer": "2007",
+  "incorrect_answers": [
+  "2008",
+  "2009",
+  "2010"
+  ]
+  },
+  {
+  "category": "Entertainment: Television",
+  "type": "multiple",
+  "difficulty": "hard",
+  "question": "In &quot;Star Trek&quot;, what is the Klingon delicacy of &quot;gagh&quot; made from?",
+  "correct_answer": "Serpent worms",
+  "incorrect_answers": [
+  "Earthworms",
+  "Spaghetti noodles",
+  "Klingworms"
+  ]
+  },
+  {
+  "category": "Entertainment: Japanese Anime & Manga",
+  "type": "boolean",
+  "difficulty": "hard",
+  "question": "In the &quot;Kagerou Daze&quot; series, Shintaro Kisaragi is prominently shown with the color red.",
+  "correct_answer": "True",
+  "incorrect_answers": [
+  "False"
+  ]
+  },
+  {
+  "category": "Entertainment: Music",
+  "type": "multiple",
+  "difficulty": "hard",
+  "question": "Which member of the Wu-Tang Clan had only one verse in their debut album Enter the Wu-Tang (36 Chambers)?",
+  "correct_answer": "Masta Killa",
+  "incorrect_answers": [
+  "Method Man",
+  "Inspectah Deck",
+  "GZA"
+  ]
+  }
+  ]
+  }

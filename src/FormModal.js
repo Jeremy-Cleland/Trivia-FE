@@ -9,7 +9,7 @@ class FormModal extends React.Component {
       <>
         <Modal show={this.props.showModal} onHide={this.props.handleCloseModal}>
 
-          <Modal.Header closeButton></Modal.Header>
+          <Modal.Header></Modal.Header>
 
           <Modal.Body>
             <Container className="mt-5">

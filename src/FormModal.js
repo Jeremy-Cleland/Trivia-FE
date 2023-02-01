@@ -9,7 +9,7 @@ class FormModal extends React.Component {
       <>
         <Modal show={this.props.showModal} onHide={this.props.handleCloseModal}>
 
-          <Modal.Header></Modal.Header>
+          <Modal.Header closeButton></Modal.Header>
 
           <Modal.Body>
             <Container className="mt-5">
@@ -33,6 +33,12 @@ class FormModal extends React.Component {
                 <Button type="submit">Submit</Button>
 
               </Form>
+
+              <Button
+                type="button"
+                onClick={this.props.handleFetchQuestions}>
+                Get New Questions
+              </Button>
             </Container>
           </Modal.Body>
 

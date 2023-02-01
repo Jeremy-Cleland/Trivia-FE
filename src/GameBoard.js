@@ -1,7 +1,6 @@
 import React from 'react';
+import Leaderboard from './Leaderboard';
 import Question from './Question';
-//import Modal from 'react-bootstrap/Modal';
-//import { Container, Form, Button } from 'react-bootstrap';
 
 class GameBoard extends React.Component {
   constructor(props) {
@@ -13,6 +12,10 @@ class GameBoard extends React.Component {
     };
   }
 
+  // toggleCorrectAnswerIndicator = () => {
+
+  // }
+
   handleSubmitAnswer = (event) => {
     event.preventDefault();
 
@@ -20,6 +23,8 @@ class GameBoard extends React.Component {
       this.setState({
         correctAnswers: this.state.correctAnswers + 1
       });
+
+
     }
 
     if (this.state.checkedAnswer) {
@@ -38,7 +43,15 @@ class GameBoard extends React.Component {
 
   render() {
     return (
-      <div>
+      <>
+        {this.state.renderedQuestionIndex === this.props.questions.length && this.props.questions.length > 0 ?
+          <Leaderboard
+            correctAnswers={this.state.correctAnswers}
+            totalAnswers={this.props.questions.length}
+          // handleResetQuestionArray={this.props.handleResetQuestionArray}
+          /> :
+          `SCORE: ${this.state.correctAnswers}`}
+
         {this.props.questions.map((question, index) => (
           <Question key={index}
             question={question}
@@ -48,8 +61,7 @@ class GameBoard extends React.Component {
             renderedQuestionIndex={this.state.renderedQuestionIndex}
           />
         ))}
-        {this.state.correctAnswers}
-      </div>
+      </>
     );
   }
 }

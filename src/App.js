@@ -1,24 +1,41 @@
 //import './App.css';
 import React from 'react';
-//import axios from 'axios';
+import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import FormModal from './FormModal';
 import GameBoard from './GameBoard';
-import staticQuestions from './staticData.json';
+import Button from 'react-bootstrap/Button';
+// import staticQuestions from './staticData.json';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       showModal: true,
-      questionArray: staticQuestions.results,
+      questionArray: []
     };
   }
 
+  // handleResetQuestionArray = () => {
+  //   this.setState({
+  //     questionArray: null
+  //   });
+  // };
+
+  handleFetchQuestions = async () => {
+    const url = 'https://opentdb.com/api.php?amount=10';
+    const response = await axios(url);
+    console.log(response.data.results);
+    this.setState({
+      questionArray: response.data.results
+    });
+  };
+
   // Modal
 
-  handleOpenModal = () => {
+  handleToggleModal = () => {
     this.setState({
-      showModal: true
+      showModal: !this.state.showModal
     });
   };
 
@@ -34,13 +51,16 @@ class App extends React.Component {
         <FormModal
           showModal={this.state.showModal}
           handleCloseModal={this.handleCloseModal}
+          handleFetchQuestions={this.handleFetchQuestions}
         />
         <GameBoard
+          // handleResetQuestionArray={this.handleResetQuestionArray}
           questions={this.state.questionArray} />
-        <button onClick={this.handleOpenModal}>
+        <Button
+          onClick={this.handleToggleModal}>
           Game Options
-        </button>
-      </div >
+        </Button>
+      </div>
     );
   }
 }

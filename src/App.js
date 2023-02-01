@@ -5,6 +5,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import FormModal from './FormModal';
 import GameBoard from './GameBoard';
 import Button from 'react-bootstrap/Button';
+import Login from './Login';
+import Logout from './Logout';
+import Profile from './Profile';
 // import staticQuestions from './staticData.json';
 
 class App extends React.Component {
@@ -48,6 +51,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <Login />
+        <Logout />
+        <Profile />
         <FormModal
           showModal={this.state.showModal}
           handleCloseModal={this.handleCloseModal}

@@ -40,7 +40,7 @@ The MVP for BotM will be a SPA that interacts with the OTDB to dynamically creat
 
 ## Data Flow
 
-![Miro Data Flow](BotM%20Data%20Flow.png)
+![Miro Data Flow](./src/Data/BotM%20Data%20Flow.png)
 
 ## Non-Functional Requirements
 

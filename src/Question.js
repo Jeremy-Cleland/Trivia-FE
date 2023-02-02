@@ -14,7 +14,7 @@ class Question extends React.Component {
   }
 
   removeSpecialCharacters = (string) => {
-    const renderString = string.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/(&#39;|&#039;)/g, `'`).replace(/&amp;/g, '&').replace(/&eacute;/g, 'é').replace(/&ndash;/g, '-');
+    const renderString = string.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/(&quot;|&ldquo;|&rdquo;)/g, '"').replace(/(&#39;|&#039;|&rsquo;)/g, `'`).replace(/&amp;/g, '&').replace(/&eacute;/g, 'é').replace(/&ndash;/g, '-').replace(/&deg;/g, '°');
     return renderString;
   };
 

@@ -12,10 +12,6 @@ class GameBoard extends React.Component {
     };
   }
 
-  // toggleCorrectAnswerIndicator = () => {
-
-  // }
-
   handleSubmitAnswer = (event) => {
     event.preventDefault();
 
@@ -46,7 +42,7 @@ class GameBoard extends React.Component {
       <>
         <h1 className={styles.h1}>This Is SPARTA!!!(gameboard)</h1>
         {this.state.renderedQuestionIndex === this.props.questions.length && this.props.questions.length > 0 ?
-          (<p>You got {this.state.correctAnswers} out of {this.props.questions.length} correct.</p>) :
+          (<p>You got {this.state.correctAnswers} out of {this.props.questions.legnth} correct.</p>) :
           `SCORE: ${this.state.correctAnswers}`}
 
         {this.props.questions.map((question, index) => (

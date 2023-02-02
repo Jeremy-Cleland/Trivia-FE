@@ -1,6 +1,6 @@
 import React from 'react';
-import Leaderboard from './Leaderboard';
 import Question from './Question';
+import styles from './Gameboard.module.css';
 
 class GameBoard extends React.Component {
   constructor(props) {
@@ -44,12 +44,9 @@ class GameBoard extends React.Component {
   render() {
     return (
       <>
+        <h1 className={styles.h1}>This Is SPARTA!!!(gameboard)</h1>
         {this.state.renderedQuestionIndex === this.props.questions.length && this.props.questions.length > 0 ?
-          <Leaderboard
-            correctAnswers={this.state.correctAnswers}
-            totalAnswers={this.props.questions.length}
-          // handleResetQuestionArray={this.props.handleResetQuestionArray}
-          /> :
+          (<p>You got {this.state.correctAnswers} out of {this.props.questions.length} correct.</p>) :
           `SCORE: ${this.state.correctAnswers}`}
 
         {this.props.questions.map((question, index) => (

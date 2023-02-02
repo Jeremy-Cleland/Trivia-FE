@@ -1,20 +1,19 @@
-//import './App.css';
 import React from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+import styles from './App.module.css';
 import FormModal from './FormModal';
 import GameBoard from './GameBoard';
 import Button from 'react-bootstrap/Button';
-import Login from './Login';
-import Logout from './Logout';
-import Profile from './Profile';
-// import staticQuestions from './staticData.json';
+import Header from './Header';
+
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showModal: true,
+      showModal: false,
       questionArray: []
     };
   }
@@ -28,13 +27,13 @@ class App extends React.Component {
   handleFetchQuestions = async () => {
     const url = 'https://opentdb.com/api.php?amount=10';
     const response = await axios(url);
-    console.log(response.data.results);
     this.setState({
-      questionArray: response.data.results
+      questionArray: response.data.results,
+      showModal: false
     });
   };
 
-  // Modal
+  // Form Modal
 
   handleToggleModal = () => {
     this.setState({
@@ -50,15 +49,16 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <Login />
-        <Logout />
-        <Profile />
+      <body>
+        <h1 className={styles.h1}>
+          This is App.
+        </h1>
         <FormModal
           showModal={this.state.showModal}
           handleCloseModal={this.handleCloseModal}
           handleFetchQuestions={this.handleFetchQuestions}
         />
+        <Header />
         <GameBoard
           // handleResetQuestionArray={this.handleResetQuestionArray}
           questions={this.state.questionArray} />
@@ -66,7 +66,7 @@ class App extends React.Component {
           onClick={this.handleToggleModal}>
           Game Options
         </Button>
-      </div>
+      </body>
     );
   }
 }

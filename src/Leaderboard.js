@@ -5,16 +5,14 @@ class Leaderboard extends React.Component {
     super(props);
   }
 
-  // componentDidMount() {
-  //   this.props.handleResetQuestionArray();
-  // }
-
   render() {
     return (
       <>
-        <p>
-          You got {this.props.correctAnswers} out of {this.props.totalAnswers} correct.
-        </p>
+        {/* 
+        
+        List of Players with each having a picture, score, and name
+        
+        */}
       </>
     );
   }

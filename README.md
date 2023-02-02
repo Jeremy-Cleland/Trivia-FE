@@ -11,7 +11,7 @@
 - Eli Bailey
 - Jeremy Cleland
 
-![User Schema](./User%20Schema.png)
+![User Schema](./src/Data/User%20Schema.png)
 
 ## Miro Board
 

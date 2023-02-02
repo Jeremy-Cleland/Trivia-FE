@@ -13,10 +13,10 @@ class Question extends React.Component {
     this.scrambleAnswersArray();
   }
 
-  // removeSpecialCharacters = (string) => {
-  //   const renderString = string.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, `'`).replace(/&amp;/g, '&');
-  //   return renderString;
-  // };
+  removeSpecialCharacters = (string) => {
+    const renderString = string.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/(&#39;|&#039;)/g, `'`).replace(/&amp;/g, '&').replace(/&eacute;/g, 'é').replace(/&ndash;/g, '-');
+    return renderString;
+  };
 
   scrambleAnswersArray = () => {
     const scrambledAnswersArray = [...this.props.question.incorrect_answers, this.props.question.correct_answer];
@@ -32,7 +32,7 @@ class Question extends React.Component {
         {
           this.props.renderedQuestionIndex === this.props.currentQuestionIndex ?
             <form onSubmit={() => (this.props.handleSubmitAnswer(event))}>
-              <h1>{this.props.question.question}</h1>
+              <h1>{this.removeSpecialCharacters(this.props.question.question)}</h1>
 
               {this.state.answersArray.map((answer, index) => (
                 <label key={index}>
@@ -42,7 +42,7 @@ class Question extends React.Component {
                     type="radio"
                     value={answer}
                     onChange={(e) => this.props.handleAnswerChange(e.target.value)} />
-                  {answer}
+                  {this.removeSpecialCharacters(answer)}
 
                 </label>
               ))}

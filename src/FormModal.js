@@ -42,7 +42,7 @@ class FormModal extends React.Component {
                   <Form.Label>Difficulty Level</Form.Label>
                   <Form.Check
                     inline
-                    checked
+                    defaultChecked
                     name="difficulty"
                     type="radio"
                     value="all"

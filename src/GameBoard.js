@@ -1,31 +1,24 @@
 import React from 'react';
 import Question from './Question';
-import styles from './Gameboard.module.css';
 
 class GameBoard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      renderedQuestionIndex: 0,
-      checkedAnswer: null,
-      correctAnswers: 0
+      checkedAnswer: null
     };
   }
 
   handleSubmitAnswer = (event) => {
     event.preventDefault();
 
-    if (this.state.checkedAnswer === this.props.questions[this.state.renderedQuestionIndex].correct_answer) {
-      this.setState({
-        correctAnswers: this.state.correctAnswers + 1
-      });
-
-
+    if (this.state.checkedAnswer === this.props.questions[this.props.renderedQuestionIndex].correct_answer) {
+      this.props.handleUpdateCorrectAnswers();
     }
 
     if (this.state.checkedAnswer) {
+      this.props.handleQuestionAdvance();
       this.setState({
-        renderedQuestionIndex: this.state.renderedQuestionIndex + 1,
         checkedAnswer: null
       });
     }
@@ -40,10 +33,10 @@ class GameBoard extends React.Component {
   render() {
     return (
       <>
-        <h1 className={styles.h1}>This Is SPARTA!!!(gameboard)</h1>
-        {this.state.renderedQuestionIndex === this.props.questions.length && this.props.questions.length > 0 ?
-          (<p>You got {this.state.correctAnswers} out of {this.props.questions.legnth} correct.</p>) :
-          `SCORE: ${this.state.correctAnswers}`}
+        {this.props.renderedQuestionIndex === this.props.questions.length && this.props.questions.length > 0 ?
+          (<p>You got {this.props.correctAnswers} out of {this.props.questions.length} correct.</p>) :
+          this.props.questions.length > 0 ?
+            <h3>SCORE: {this.props.correctAnswers}</h3> : null}
 
         {this.props.questions.map((question, index) => (
           <Question key={index}
@@ -51,7 +44,7 @@ class GameBoard extends React.Component {
             handleAnswerChange={this.handleAnswerChange}
             handleSubmitAnswer={this.handleSubmitAnswer}
             currentQuestionIndex={index}
-            renderedQuestionIndex={this.state.renderedQuestionIndex}
+            renderedQuestionIndex={this.props.renderedQuestionIndex}
           />
         ))}
       </>

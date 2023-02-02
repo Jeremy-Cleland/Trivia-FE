@@ -5,21 +5,33 @@ import './App.css';
 import FormModal from './FormModal';
 import GameBoard from './GameBoard';
 import Button from 'react-bootstrap/Button';
-import Header from './Header';
-
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       showModal: false,
-      questionArray: []
+      questionArray: [],
+      renderedQuestionIndex: 0,
+      correctAnswers: 0
     };
   }
 
   handleResetQuestionArray = () => {
     this.setState({
       questionArray: []
+    });
+  };
+
+  handleQuestionAdvance = () => {
+    this.setState({
+      renderedQuestionIndex: this.state.renderedQuestionIndex + 1
+    });
+  };
+
+  handleUpdateCorrectAnswers = () => {
+    this.setState({
+      correctAnswers: this.state.correctAnswers + 1
     });
   };
 
@@ -33,15 +45,15 @@ class App extends React.Component {
     };
 
     let url = `https://opentdb.com/api.php?amount=${formOptions.numberOfQuestions}`;
-
     url = formOptions.category === 'all' ? url : `${url}&category=${formOptions.category}`;
-
     url = formOptions.difficulty === 'all' ? url : `${url}&difficulty=${formOptions.difficulty}`;
 
     this.handleResetQuestionArray();
 
     const response = await axios(url);
     this.setState({
+      renderedQuestionIndex: 0,
+      correctAnswers: 0,
       questionArray: response.data.results,
       showModal: false
     });
@@ -63,24 +75,26 @@ class App extends React.Component {
 
   render() {
     return (
-      <body>
+      <>
         <FormModal
           showModal={this.state.showModal}
           handleCloseModal={this.handleCloseModal}
           handleFetchQuestions={this.handleFetchQuestions}
         />
-        <Header />
         <GameBoard
           handleResetQuestionArray={this.handleResetQuestionArray}
-          questions={this.state.questionArray} />
+          questions={this.state.questionArray}
+          renderedQuestionIndex={this.state.renderedQuestionIndex}
+          handleQuestionAdvance={this.handleQuestionAdvance}
+          correctAnswers={this.state.correctAnswers}
+          handleUpdateCorrectAnswers={this.handleUpdateCorrectAnswers} />
         <Button
           onClick={this.handleToggleModal}>
           Game Options
         </Button>
-      </body>
+      </>
     );
   }
 }
-
 
 export default App;

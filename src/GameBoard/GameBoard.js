@@ -1,38 +1,49 @@
 import React from 'react';
-import Question from '../Question/Question';
-import styles from './Gameboard.module.css';
+import Question from './Question';
+import axios from 'axios';
+import { withAuth0 } from '@auth0/auth0-react';
 
 class GameBoard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      renderedQuestionIndex: 0,
-      checkedAnswer: null,
-      correctAnswers: 0,
+      checkedAnswer: null
     };
   }
 
-  // toggleCorrectAnswerIndicator = () => {
-
-  // }
+  handleScoreSubmit = async (user) => {
+    const savedUser = await axios(`http://localhost:3001/users/${user.nickname}`);
+    if (!savedUser.data) {
+      const submittingUser = {
+        _id: user.nickname,
+        picture: user.picture,
+        score: this.props.correctAnswers
+      };
+      const newUser = await axios.post('http://localhost:3001/users', submittingUser);
+      console.log('new', newUser.data);
+    } else {
+      savedUser.data.score = +savedUser.data.score + this.props.correctAnswers;
+      const updatedUser = await axios.put(`http://localhost:3001/users/${savedUser.data._id}`, savedUser.data);
+      console.log('update', updatedUser.data);
+    }
+  };
 
   handleSubmitAnswer = (event) => {
     event.preventDefault();
 
-    if (
-      this.state.checkedAnswer ===
-      this.props.questions[this.state.renderedQuestionIndex]
-        .correct_answer
-    ) {
-      this.setState({
-        correctAnswers: this.state.correctAnswers + 1,
-      });
+    if (this.state.checkedAnswer === this.props.questions[this.props.renderedQuestionIndex].correct_answer) {
+      this.props.handleUpdateCorrectAnswers();
+    }
+
+    if (this.props.auth0.isAuthenticated && this.props.renderedQuestionIndex === (this.props.questions.length - 1) && this.props.questions.length > 0) {
+      const user = this.props.auth0.user;
+      this.handleScoreSubmit(user);
     }
 
     if (this.state.checkedAnswer) {
+      this.props.handleQuestionAdvance();
       this.setState({
-        renderedQuestionIndex: this.state.renderedQuestionIndex + 1,
-        checkedAnswer: null,
+        checkedAnswer: null
       });
     }
   };
@@ -46,18 +57,10 @@ class GameBoard extends React.Component {
   render() {
     return (
       <>
-        <h3 className={styles.h3}>Description:</h3>
-        <h3 className={styles.h3}>Instructions:</h3>
-        {this.state.renderedQuestionIndex ===
-          this.props.questions.length &&
-          this.props.questions.length > 0 ? (
-            <p>
-            You got {this.state.correctAnswers} out of{' '}
-              {this.props.questions.length} correct.
-            </p>
-          ) : (
-            `SCORE: ${this.state.correctAnswers}`
-          )}
+        {this.props.renderedQuestionIndex === this.props.questions.length && this.props.questions.length > 0 ?
+          (<h3>You got {this.props.correctAnswers} out of {this.props.questions.length} correct.</h3>) :
+          this.props.questions.length > 0 ?
+            <h3>SCORE: {this.props.correctAnswers}</h3> : null}
 
         {this.props.questions.map((question, index) => (
           <Question
@@ -66,7 +69,7 @@ class GameBoard extends React.Component {
             handleAnswerChange={this.handleAnswerChange}
             handleSubmitAnswer={this.handleSubmitAnswer}
             currentQuestionIndex={index}
-            renderedQuestionIndex={this.state.renderedQuestionIndex}
+            renderedQuestionIndex={this.props.renderedQuestionIndex}
           />
         ))}
       </>
@@ -74,4 +77,4 @@ class GameBoard extends React.Component {
   }
 }
 
-export default GameBoard;
+export default withAuth0(GameBoard);

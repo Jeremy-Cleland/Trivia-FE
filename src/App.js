@@ -92,6 +92,8 @@ class App extends React.Component {
           onClick={this.handleToggleModal}>
           Game Options
         </Button>
+        <p><span>DESCRIPTION:</span> A game to test the mind! Battle of the Minds is a game designed to provide interacting and engaging intellectual stimulation through testing your knowledge on trivia questions in the category of the user’s choosing. Once the user selects their category, preferred number of questions and difficulty level, the battle begins!</p>
+        <p><span>INSTRUCTIONS:</span> Click on the Game Options button to get started, choose your settings, prepare your mind for battle, and unleash the trivia! Use the GitHub login at the top of the screen to have your cumalative score added to our leaderboard.</p>
       </>
     );
   }

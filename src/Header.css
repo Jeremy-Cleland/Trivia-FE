@@ -3,7 +3,13 @@ header {
   justify-content: space-between;
   align-items: center;
   border-bottom: solid black 1px;
-}
+  background-color: #222;
+  height: 950px;
+  padding: 20px;
+  color: black;
+  background-image: url("../public/assets/minds.png");
+  }
+
 
 header div {
   padding: 5px;

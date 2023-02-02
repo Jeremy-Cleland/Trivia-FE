@@ -3,6 +3,7 @@ import { withAuth0 } from '@auth0/auth0-react';
 import Login from './Login';
 import Logout from './Logout';
 import './Header.css';
+import styles from './Header.module.css';
 
 class Header extends React.Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class Header extends React.Component {
             (<><Logout /> <p>{user.nickname}</p></>) :
             <Login />}
         </div>
-        <h1>Battle of the Minds</h1>
+        <h1 className = {styles.h1}>Battle of the Minds</h1>
         <div className="user-info">
           {this.props.auth0.isAuthenticated && <img src={user.picture} alt="profile picture" />}
         </div>

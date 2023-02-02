@@ -44,7 +44,8 @@ class GameBoard extends React.Component {
   render() {
     return (
       <>
-        <h1 className={styles.h1}>This Is SPARTA!!!(gameboard)</h1>
+        <h3 className={styles.h3}>Description:</h3>
+        <h3 className={styles.h3}>Instructions:</h3>
         {this.state.renderedQuestionIndex === this.props.questions.length && this.props.questions.length > 0 ?
           (<p>You got {this.state.correctAnswers} out of {this.props.questions.length} correct.</p>) :
           `SCORE: ${this.state.correctAnswers}`}

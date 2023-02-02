@@ -1,6 +1,23 @@
 body {
   text-align: center;
-}
+  background-color: #463F3A;
+  }
+
+  Button {
+    border: none;
+    display: block;
+    font-size: 2rem;
+    height: 50px;
+    margin: 12px;
+    min-width: 200px;
+    padding: 0px 24px;
+    background-color: #463F3A;
+    color: white;
+    box-shadow: 0 4px 0 rgb(240, 240, 240, 0.5);
+    border-radius: 5px;
+
+  }
+
 
 /* h1 {
   background-color: purple;

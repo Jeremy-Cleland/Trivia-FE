@@ -19,12 +19,10 @@ class GameBoard extends React.Component {
         picture: user.picture,
         score: this.props.correctAnswers
       };
-      const newUser = await axios.post('http://localhost:3001/users', submittingUser);
-      console.log('new', newUser.data);
+      await axios.post('http://localhost:3001/users', submittingUser);
     } else {
       savedUser.data.score = +savedUser.data.score + this.props.correctAnswers;
-      const updatedUser = await axios.put(`http://localhost:3001/users/${savedUser.data._id}`, savedUser.data);
-      console.log('update', updatedUser.data);
+      await axios.put(`http://localhost:3001/users/${savedUser.data._id}`, savedUser.data);
     }
   };
 

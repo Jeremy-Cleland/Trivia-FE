@@ -28,16 +28,19 @@ class Question extends React.Component {
 
   render() {
     return (
-      <>
+      <div className={styles.container}>
         {
           this.props.renderedQuestionIndex === this.props.currentQuestionIndex ?
             <form onSubmit={() => (this.props.handleSubmitAnswer(event))}>
-              <h1>{this.removeSpecialCharacters(this.props.question.question)}</h1>
+              <h1 className={styles.question}>{this.removeSpecialCharacters(this.props.question.question)}</h1>
 
               {this.state.answersArray.map((answer, index) => (
-                <label key={index}>
+                <label
+                  className={styles.label}
+                  key={index}>
 
                   <input
+                    className={styles.radio}
                     name={this.props.question.question}
                     type="radio"
                     value={answer}
@@ -50,7 +53,7 @@ class Question extends React.Component {
               <button className={styles.startButton} type="submit">Submit Answer</button>
             </form> : null
         }
-      </>
+      </div>
     );
   }
 }

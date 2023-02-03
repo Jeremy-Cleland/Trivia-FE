@@ -1,15 +1,6 @@
-/* .app {
-  text-align: center;
-  background-color: #463f3a;
-  min-height: 100vw;
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-} */
-
 .main {
   text-align: center;
-  background-image: url('../public/assets/minds.png');
+  background-image: url('../public/assets/minds1.png');
   background-size: cover;
   background-repeat: no-repeat;
   overflow: auto;
@@ -63,4 +54,5 @@
 .info {
   margin: auto;
   width: 45vw;
+  font-weight: 600;
 }

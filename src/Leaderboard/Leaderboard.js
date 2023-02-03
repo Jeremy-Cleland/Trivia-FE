@@ -15,7 +15,7 @@ class Leaderboard extends React.Component {
   }
 
   getLeaderboardUsers = async () => {
-    const users = await axios('http://localhost:3001/users');
+    const users = await axios(`${process.env.REACT_APP_SERVER}users`);
     users.data.sort((a, b) => b.score - a.score);
     this.setState({
       users: users.data

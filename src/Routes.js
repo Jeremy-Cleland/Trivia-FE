@@ -4,10 +4,10 @@ import {
   Routes as Switch,
   Route
 } from 'react-router-dom';
-import Header from './Header';
+import Header from './Header/Header';
 import App from './App';
-import About from './About';
-import Leaderboard from './Leaderboard';
+import About from './About/About';
+import Leaderboard from './Leaderboard/Leaderboard';
 
 class Routes extends React.Component {
 

@@ -1,11 +1,11 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
+import styles from './Question.module.css';
 
 class Question extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      answersArray: []
+      answersArray: [],
     };
   }
 
@@ -47,7 +47,7 @@ class Question extends React.Component {
                 </label>
               ))}
               <br />
-              <Button type="submit">Submit Answer</Button>
+              <button className={styles.startButton} type="submit">Submit Answer</button>
             </form> : null
         }
       </>

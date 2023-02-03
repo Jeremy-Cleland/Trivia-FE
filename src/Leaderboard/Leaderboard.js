@@ -24,7 +24,7 @@ class Leaderboard extends React.Component {
 
   render() {
     return (
-      <>
+      <div className={styles.container}>
         <h1>Leaderboard</h1>
         {this.state.users.map(user => (
           <div key={user._id} className={styles.userDiv}>
@@ -33,7 +33,7 @@ class Leaderboard extends React.Component {
             <p className={styles.userScore}>{user.score}</p>
           </div>
         ))}
-      </>
+      </div>
     );
   }
 }

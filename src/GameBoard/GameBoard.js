@@ -1,5 +1,5 @@
 import React from 'react';
-import Question from './Question';
+import Question from '../Question/Question';
 import axios from 'axios';
 import { withAuth0 } from '@auth0/auth0-react';
 
@@ -50,7 +50,7 @@ class GameBoard extends React.Component {
 
   handleAnswerChange = (value) => {
     this.setState({
-      checkedAnswer: value
+      checkedAnswer: value,
     });
   };
 
@@ -63,7 +63,8 @@ class GameBoard extends React.Component {
             <h3>SCORE: {this.props.correctAnswers}</h3> : null}
 
         {this.props.questions.map((question, index) => (
-          <Question key={index}
+          <Question
+            key={index}
             question={question}
             handleAnswerChange={this.handleAnswerChange}
             handleSubmitAnswer={this.handleSubmitAnswer}

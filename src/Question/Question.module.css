@@ -1,30 +1,6 @@
-/* .app {
-  text-align: center;
-  background-color: #463f3a;
-  min-height: 100vw;
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-} */
-
-.main {
-  text-align: center;
-  background-image: url('../public/assets/minds.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  overflow: auto;
-  position: relative;
-  height: 90vh;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 .startButton {
   min-width: 100px;
   margin: 10px;
-  margin-top: 35px;
   height: 40px;
   color: #fff;
   padding: 5px 10px;
@@ -41,12 +17,15 @@
   border: 2px solid #5e503f;
   color: #5e503f;
 }
+
 .startButton:hover {
   color: #eae0d5;
 }
+
 .startButton:hover:after {
   height: 100%;
 }
+
 .startButton:after {
   content: '';
   position: absolute;
@@ -58,9 +37,4 @@
   width: 100%;
   border: 2px solid #5e503f;
   background: #5e503f;
-}
-
-.info {
-  margin: auto;
-  width: 45vw;
 }

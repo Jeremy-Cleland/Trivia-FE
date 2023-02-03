@@ -1,0 +1,109 @@
+.modal {
+  background-color: #463f3a;
+  font-size: 1 rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header {
+  background: #c6ac8f;
+
+  font-size: 1.2rem;
+  color: #463f3a;
+  font-weight: 700;
+  border-bottom: 2px solid #463f3a;
+}
+
+.body {
+  align-items: center;
+  background: #c6ac8f;
+}
+.innerbody {
+  align-items: center;
+  background: #eae0d5;
+  border-radius: 12px;
+  align-content: center;
+}
+.modal.container {
+  background: #c6ac8f;
+  color: #c6ac8f;
+}
+.gameButton1 {
+  min-width: 100px;
+  margin: 10px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  z-index: 0;
+  background: #c6ac8f;
+  overflow: hidden;
+  border: 2px solid #463f3a;
+  color: #463f3a;
+}
+.gameButton1:hover {
+  color: #eae0d5;
+}
+.gameButton1:hover:after {
+  height: 100%;
+}
+.gameButton1:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  transition: all 0.3s ease;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background: #463f3a;
+}
+
+.gameButton2 {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  margin: 10px;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  z-index: 0;
+  background: #c6ac8f;
+  overflow: hidden;
+  border: 2px solid #463f3a;
+  color: #463f3a;
+}
+.gameButton2:hover {
+  color: #eae0d5;
+}
+.gameButton2:hover:after {
+  height: 100%;
+}
+.gameButton2:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  transition: all 0.3s ease;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background: #463f3a;
+}
+
+.formLabel {
+  padding: 10px;
+  color: #463f3a;
+  font-weight: 700;
+}

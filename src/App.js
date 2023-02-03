@@ -1,10 +1,11 @@
 import React from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import FormModal from './FormModal';
-import GameBoard from './GameBoard';
-import Button from 'react-bootstrap/Button';
+import styles from './App.module.css';
+import FormModal from './FormModal/FormModal';
+import GameBoard from './GameBoard/GameBoard';
+// import Header from './Header/Header';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -55,7 +56,7 @@ class App extends React.Component {
       renderedQuestionIndex: 0,
       correctAnswers: 0,
       questionArray: response.data.results,
-      showModal: false
+      showModal: false,
     });
   };
 
@@ -63,38 +64,43 @@ class App extends React.Component {
 
   handleToggleModal = () => {
     this.setState({
-      showModal: !this.state.showModal
+      showModal: !this.state.showModal,
     });
   };
 
   handleCloseModal = () => {
     this.setState({
-      showModal: false
+      showModal: false,
     });
   };
 
   render() {
     return (
-      <>
-        <FormModal
-          showModal={this.state.showModal}
-          handleCloseModal={this.handleCloseModal}
-          handleFetchQuestions={this.handleFetchQuestions}
-        />
-        <GameBoard
-          handleResetQuestionArray={this.handleResetQuestionArray}
-          questions={this.state.questionArray}
-          renderedQuestionIndex={this.state.renderedQuestionIndex}
-          handleQuestionAdvance={this.handleQuestionAdvance}
-          correctAnswers={this.state.correctAnswers}
-          handleUpdateCorrectAnswers={this.handleUpdateCorrectAnswers} />
-        <Button
-          onClick={this.handleToggleModal}>
-          Game Options
-        </Button>
-        <p><span>DESCRIPTION:</span> A game to test the mind! Battle of the Minds is a game designed to provide interacting and engaging intellectual stimulation through testing your knowledge on trivia questions in the category of the user’s choosing. Once the user selects their category, preferred number of questions and difficulty level, the battle begins!</p>
-        <p><span>INSTRUCTIONS:</span> Click on the Game Options button to get started, choose your settings, prepare your mind for battle, and unleash the trivia! Use the GitHub login at the top of the screen to have your cumalative score added to our leaderboard.</p>
-      </>
+      <div className={styles.main}>
+        <div>
+          <FormModal
+            showModal={this.state.showModal}
+            handleCloseModal={this.handleCloseModal}
+            handleFetchQuestions={this.handleFetchQuestions}
+          />
+          <GameBoard
+            handleResetQuestionArray={this.handleResetQuestionArray}
+            questions={this.state.questionArray}
+            renderedQuestionIndex={this.state.renderedQuestionIndex}
+            handleQuestionAdvance={this.handleQuestionAdvance}
+            correctAnswers={this.state.correctAnswers}
+            handleUpdateCorrectAnswers={this.handleUpdateCorrectAnswers} />
+          <button
+            className={styles.startButton}
+            onClick={this.handleToggleModal}>
+            Game Options
+          </button>
+        </div>
+        <div className={styles.info}>
+          <p><span>DESCRIPTION:</span> A game to test the mind! Battle of the Minds is a game designed to provide interacting and engaging intellectual stimulation through testing your knowledge on trivia questions in the category of the user’s choosing. Once the user selects their category, preferred number of questions and difficulty level, the battle begins!</p>
+          <p><span>INSTRUCTIONS:</span> Click on the Game Options button to get started, choose your settings, prepare your mind for battle, and unleash the trivia! Use the GitHub login at the top of the screen to have your cumalative score added to our leaderboard.</p>
+        </div>
+      </div>
     );
   }
 }

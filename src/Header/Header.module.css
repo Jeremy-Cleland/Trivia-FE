@@ -1,0 +1,51 @@
+.header {
+  margin-bottom: 3px;
+  padding: 0;
+  scroll-behavior: smooth;
+  text-align: center;
+  background-color: #463f3a;
+  box-shadow: 0 4px 2px -2px #000;
+  min-height: 10vh;
+}
+
+.title {
+  font-family: 'Rock Salt', cursive;
+  font-size: 4.2rem;
+  margin: 0;
+  padding-bottom: 15px;
+}
+
+.login {
+  text-align: center;
+  color: #EAE0D5;
+}
+
+.profilePic {
+  width: 50px;
+}
+
+.upperRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 5px;
+  margin: 0;
+  margin-bottom: -10px;
+}
+
+.activeLink {
+  display: none;
+}
+
+.link {
+  color: #C6AC8F;
+  padding: 2px;
+}
+
+.link:hover {
+  color: #EAE0D5;
+}
+
+.header p {
+  margin: 0;
+}

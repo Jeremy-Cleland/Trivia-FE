@@ -1,10 +1,9 @@
 import React from 'react';
 import { withAuth0 } from '@auth0/auth0-react';
 import { NavLink } from 'react-router-dom';
-import Login from './Login';
-import Logout from './Logout';
+import Login from '../Login/Login';
+import Logout from '../Logout/Logout';
 import styles from './Header.module.css';
-
 class Header extends React.Component {
   constructor(props) {
     super(props);
@@ -13,7 +12,7 @@ class Header extends React.Component {
   render() {
     const user = this.props.auth0.user;
     return (
-      <header>
+      <header className={styles.header}>
 
         <div className={styles.upperRow}>
           <div className={styles.login}>
@@ -39,7 +38,7 @@ class Header extends React.Component {
           </div>
         </div>
 
-        <h1>Battle of the Minds</h1>
+        <h1 className={styles.title}>Battle of the Minds</h1>
       </header>
     );
   }

@@ -1,15 +1,15 @@
 import React from 'react';
 import styles from './About.module.css';
-import Eli from './Data/Eli.png';
-import Jeremy from './Data/Jeremy.png';
-import Adrienne from './Data/Adrienne.jpeg';
-import Brandon from './Data/Brandon.JPG';
+import Eli from '../Data/Eli.png';
+import Jeremy from '../Data/Jeremy.png';
+import Adrienne from '../Data/Adrienne.jpeg';
+import Brandon from '../Data/Brandon.JPG';
 
 class About extends React.Component {
 
   render() {
     return (
-      <>
+      <div className={styles.container}>
         <h1 className={styles.title}>The Minds Behind the Battle</h1>
 
         <div className={styles.teamMemberContainer}>
@@ -56,7 +56,7 @@ class About extends React.Component {
             I enjoy the challenge of creating simple solutions for complex problems, connecting with people, and adding joy to my teams. Collaboration is one of my favorite ways to learn while developing, and I believe it improves my ability to create & communicate new ideas.
           </p>
         </div>
-      </>
+      </div>
     );
   }
 }

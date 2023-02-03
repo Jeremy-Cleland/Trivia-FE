@@ -1,13 +1,4 @@
-.app {
-  text-align: center;
-  background-color: #463f3a;
-  min-height: 100vw;
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-}
-
-.startButton {
+.button-1 {
   min-width: 100px;
   margin: 10px;
   height: 40px;
@@ -26,13 +17,13 @@
   border: 2px solid #5e503f;
   color: #5e503f;
 }
-.startButton:hover {
+.button-1:hover {
   color: #eae0d5;
 }
-.startButton:hover:after {
+.loginButton:hover:after {
   height: 100%;
 }
-.startButton:after {
+.button-1:after {
   content: '';
   position: absolute;
   z-index: -1;
@@ -43,14 +34,4 @@
   width: 100%;
   border: 2px solid #5e503f;
   background: #5e503f;
-}
-
-.main {
-  background-image: url('../public/assets/minds.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  overflow: auto;
-  position: relative;
-  height: 900px;
-  margin: auto;
 }

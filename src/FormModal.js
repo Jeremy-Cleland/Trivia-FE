@@ -1,8 +1,8 @@
-import React from "react";
-import Modal from "react-bootstrap/Modal";
-import { Container, Form, Button } from "react-bootstrap";
-import styles from "./FormModal.module.css";
-import categories from "./Data/triviaCategories.json";
+import React from 'react';
+import Modal from 'react-bootstrap/Modal';
+import { Container, Form, Button } from 'react-bootstrap';
+import styles from './FormModal.module.css';
+import categories from './Data/triviaCategories.json';
 
 class FormModal extends React.Component {
   render() {

@@ -5,7 +5,7 @@ class Question extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      answersArray: []
+      answersArray: [],
     };
   }
 
@@ -19,37 +19,41 @@ class Question extends React.Component {
   // };
 
   scrambleAnswersArray = () => {
-    const scrambledAnswersArray = [...this.props.question.incorrect_answers, this.props.question.correct_answer];
+    const scrambledAnswersArray = [
+      ...this.props.question.incorrect_answers,
+      this.props.question.correct_answer,
+    ];
     scrambledAnswersArray.sort(() => 0.5 - Math.random());
     this.setState({
-      answersArray: scrambledAnswersArray
+      answersArray: scrambledAnswersArray,
     });
   };
 
   render() {
     return (
       <>
-        {
-          this.props.renderedQuestionIndex === this.props.currentQuestionIndex ?
-            <form onSubmit={() => (this.props.handleSubmitAnswer(event))}>
-              <h1>{this.props.question.question}</h1>
+        {this.props.renderedQuestionIndex ===
+        this.props.currentQuestionIndex ? (
+          <form onSubmit={() => this.props.handleSubmitAnswer(event)}>
+            <h1>{this.props.question.question}</h1>
 
-              {this.state.answersArray.map((answer, index) => (
-                <label key={index}>
-
-                  <input
-                    name={this.props.question.question}
-                    type="radio"
-                    value={answer}
-                    onChange={(e) => this.props.handleAnswerChange(e.target.value)} />
-                  {answer}
-
-                </label>
-              ))}
-              <br />
-              <Button type="submit">Submit Answer</Button>
-            </form> : null
-        }
+            {this.state.answersArray.map((answer, index) => (
+              <label key={index}>
+                <input
+                  name={this.props.question.question}
+                  type='radio'
+                  value={answer}
+                  onChange={(e) =>
+                    this.props.handleAnswerChange(e.target.value)
+                  }
+                />
+                {answer}
+              </label>
+            ))}
+            <br />
+            <Button type='submit'>Submit Answer</Button>
+          </form>
+        ) : null}
       </>
     );
   }

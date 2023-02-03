@@ -1,20 +1,17 @@
 import React from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
 import styles from './App.module.css';
 import FormModal from './FormModal';
 import GameBoard from './GameBoard';
-import Button from 'react-bootstrap/Button';
 import Header from './Header';
-
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       showModal: false,
-      questionArray: []
+      questionArray: [],
     };
   }
 
@@ -29,7 +26,7 @@ class App extends React.Component {
     const response = await axios(url);
     this.setState({
       questionArray: response.data.results,
-      showModal: false
+      showModal: false,
     });
   };
 
@@ -37,39 +34,37 @@ class App extends React.Component {
 
   handleToggleModal = () => {
     this.setState({
-      showModal: !this.state.showModal
+      showModal: !this.state.showModal,
     });
   };
 
   handleCloseModal = () => {
     this.setState({
-      showModal: false
+      showModal: false,
     });
   };
 
   render() {
     return (
-      <body>
-        <h1 className={styles.h1}>
-          This is App.
-        </h1>
-        <FormModal
-          showModal={this.state.showModal}
-          handleCloseModal={this.handleCloseModal}
-          handleFetchQuestions={this.handleFetchQuestions}
-        />
+      <div className={styles.app}>
         <Header />
-        <GameBoard
-          // handleResetQuestionArray={this.handleResetQuestionArray}
-          questions={this.state.questionArray} />
-        <Button
-          onClick={this.handleToggleModal}>
+        <div className={styles.main}>
+          <FormModal
+            showModal={this.state.showModal}
+            handleCloseModal={this.handleCloseModal}
+            handleFetchQuestions={this.handleFetchQuestions}
+          />
+          <GameBoard
+            // handleResetQuestionArray={this.handleResetQuestionArray}
+            questions={this.state.questionArray}
+          />
+        </div>
+        <button className={styles.startButton} onClick={this.handleToggleModal}>
           Game Options
-        </Button>
-      </body>
+        </button>
+      </div>
     );
   }
 }
-
 
 export default App;

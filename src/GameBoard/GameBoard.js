@@ -1,5 +1,5 @@
 import React from 'react';
-import Question from './Question';
+import Question from '../Question/Question';
 import axios from 'axios';
 import { withAuth0 } from '@auth0/auth0-react';
 

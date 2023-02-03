@@ -19,70 +19,66 @@ class FormModal extends React.Component {
           </Modal.Header>
           <Modal.Body className={styles.body}>
             <Container className={styles.innerbody}>
-              <Form onSubmit={this.props.handleBookSubmit}>
-                <Form.Group controlId='Category'>
+              <Form onSubmit={this.props.handleFetchQuestions}>
+                <Form.Group controlId='category'>
                   <Form.Label className={styles.formLabel}>
                     Category
                   </Form.Label>
                   <Form.Select>
-                    <option value='all'>
-                      Random Categories
-                    </option>
-                    {categories.trivia_categories.map(
-                      (category) => (
-                        <option
-                          key={category.id}
-                          value={category.id}
-                        >
-                          {category.name}
-                        </option>
-                      )
-                    )}
+                    <option value="all">Random Categories</option>
+                    {categories.trivia_categories.map(category => (
+                      <option
+                        key={category.id}
+                        value={category.id}>
+                        {category.name}
+                      </option>
+                    ))}
                   </Form.Select>
                 </Form.Group>
 
-                <Form.Group controlId='Number of Questions'>
+                <Form.Group controlId="numberOfQuestions">
                   <Form.Label className={styles.formLabel}>
                     Number of Questions
                   </Form.Label>
                   <Form.Control
-                    type='number'
-                    min='1'
-                    max='10'
-                  />
+                    type="number"
+                    min="1"
+                    max="10"
+                    defaultValue="5" />
                 </Form.Group>
 
-                <Form.Group controlId='Difficulty Level'>
+                <Form.Group controlId="difficultyLevel">
                   <Form.Label className={styles.formLabel}>
                     Difficulty Level
                   </Form.Label>
                   <Form.Check
                     inline
-                    name='difficulty'
-                    type='radio'
-                    id='All'
-                    label='All'
+                    defaultChecked
+                    name="difficulty"
+                    type="radio"
+                    value="all"
+                    label="All"
                   />
                   <Form.Check
                     inline
-                    name='difficulty'
-                    type='radio'
-                    id='Easy'
-                    label='Easy'
+                    name="difficulty"
+                    type="radio"
+                    value="easy"
+                    label="Easy"
                   />
                   <Form.Check
                     inline
-                    name='difficulty'
-                    type='radio'
-                    id='Medium'
-                    label='Medium'
+                    name="difficulty"
+                    type="radio"
+                    value="medium"
+                    label="Medium"
                   />
                   <Form.Check
                     inline
-                    name='difficulty'
-                    type='radio'
-                    id='Hard'
-                    label='Hard'
+                    name="difficulty"
+                    type="radio"
+                    value="hard"
+                    label="Hard"
                   />
                 </Form.Group>
 
@@ -94,13 +90,6 @@ class FormModal extends React.Component {
                 </Button>
               </Form>
 
-              <Button
-                className={styles.gameButton2}
-                type='button'
-                onClick={this.props.handleFetchQuestions}
-              >
-                Get New Questions
-              </Button>
             </Container>
           </Modal.Body>
         </Modal>

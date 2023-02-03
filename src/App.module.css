@@ -1,15 +1,30 @@
-.app {
+/* .app {
   text-align: center;
   background-color: #463f3a;
   min-height: 100vw;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+} */
+
+.main {
+  text-align: center;
+  background-image: url('../public/assets/minds.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: auto;
+  position: relative;
+  height: 90vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .startButton {
   min-width: 100px;
   margin: 10px;
+  margin-top: 35px;
   height: 40px;
   color: #fff;
   padding: 5px 10px;
@@ -45,12 +60,7 @@
   background: #5e503f;
 }
 
-.main {
-  background-image: url('../public/assets/minds.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  overflow: auto;
-  position: relative;
-  height: 900px;
+.info {
   margin: auto;
+  width: 45vw;
 }

@@ -1,29 +1,51 @@
-.h1 {
-  font-family: 'Zen Dots', cursive;
-  font-size: 4.2rem;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
+.header {
+  margin-bottom: 3px;
+  padding: 0;
+  scroll-behavior: smooth;
+  text-align: center;
   background-color: #463f3a;
   box-shadow: 0 4px 2px -2px #000;
+  min-height: 10vh;
 }
 
-header div {
-  padding: 5px;
+.title {
+  font-family: 'Rock Salt', cursive;
+  font-size: 4.2rem;
+  margin: 0;
+  padding-bottom: 15px;
 }
 
-.auth-buttons {
+.login {
   text-align: center;
+  color: #EAE0D5;
 }
 
-.user-info img {
+.profilePic {
   width: 50px;
 }
-.userImg {
-  width: 100px;
-  height: 100px;
+
+.upperRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 5px;
+  margin: 0;
+  margin-bottom: -10px;
+}
+
+.activeLink {
+  display: none;
+}
+
+.link {
+  color: #C6AC8F;
+  padding: 2px;
+}
+
+.link:hover {
+  color: #EAE0D5;
+}
+
+.header p {
+  margin: 0;
 }

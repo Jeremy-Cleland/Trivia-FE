@@ -1,4 +1,4 @@
-.startButton {
+.button1 {
   min-width: 100px;
   margin: 10px;
   height: 40px;
@@ -17,16 +17,13 @@
   border: 2px solid #5e503f;
   color: #5e503f;
 }
-
-.startButton:hover {
+.button1:hover {
   color: #eae0d5;
 }
-
-.startButton:hover:after {
+.loginButton:hover:after {
   height: 100%;
 }
-
-.startButton:after {
+.button1:after {
   content: '';
   position: absolute;
   z-index: -1;

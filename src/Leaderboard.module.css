@@ -1,0 +1,11 @@
+.userDiv {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 5px 20px;
+  border: solid black 1px;
+}
+
+.userPic {
+  height: 75px;
+}

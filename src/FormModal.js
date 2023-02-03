@@ -13,9 +13,9 @@ class FormModal extends React.Component {
           <Modal.Header closeButton>Game Options</Modal.Header>
           <Modal.Body>
             <Container className="mt-5">
-              <Form onSubmit={this.props.handleBookSubmit}>
+              <Form onSubmit={this.props.handleFetchQuestions}>
 
-                <Form.Group controlId="Category">
+                <Form.Group controlId="category">
                   <Form.Label>Category</Form.Label>
                   <Form.Select>
                     <option value="all">Random Categories</option>
@@ -29,42 +29,44 @@ class FormModal extends React.Component {
                   </Form.Select>
                 </Form.Group>
 
-                <Form.Group controlId="Number of Questions">
+                <Form.Group controlId="numberOfQuestions">
                   <Form.Label>Number of Questions</Form.Label>
                   <Form.Control
                     type="number"
                     min="1"
-                    max="10" />
+                    max="10"
+                    defaultValue="5" />
                 </Form.Group>
 
-                <Form.Group controlId="Difficulty Level">
+                <Form.Group controlId="difficultyLevel">
                   <Form.Label>Difficulty Level</Form.Label>
                   <Form.Check
                     inline
+                    defaultChecked
                     name="difficulty"
                     type="radio"
-                    id="All"
+                    value="all"
                     label="All"
                   />
                   <Form.Check
                     inline
                     name="difficulty"
                     type="radio"
-                    id="Easy"
+                    value="easy"
                     label="Easy"
                   />
                   <Form.Check
                     inline
                     name="difficulty"
                     type="radio"
-                    id="Medium"
+                    value="medium"
                     label="Medium"
                   />
                   <Form.Check
                     inline
                     name="difficulty"
                     type="radio"
-                    id="Hard"
+                    value="hard"
                     label="Hard"
                   />
                 </Form.Group>
@@ -72,12 +74,6 @@ class FormModal extends React.Component {
                 <Button type="submit">Submit</Button>
 
               </Form>
-
-              <Button
-                type="button"
-                onClick={this.props.handleFetchQuestions}>
-                Get New Questions
-              </Button>
             </Container>
           </Modal.Body>
 

@@ -15,7 +15,7 @@ class Leaderboard extends React.Component {
   }
 
   getLeaderboardUsers = async () => {
-    const users = await axios('https://battle-of-the-minds-be.onrender.com/users');
+    const users = await axios(`${process.env.REACT_APP_SERVER}users`);
     users.data.sort((a, b) => b.score - a.score);
     this.setState({
       users: users.data

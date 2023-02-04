@@ -16,3 +16,12 @@
 ## Miro Board
 
 [Battle of the Minds Miro](https://miro.com/app/board/uXjVPsy-oME=/?share_link_id=124166728841)
+
+# How to clone to locally
+
+In Github, search for the Battle-of-the-Minds organization
+Within the organization, there are 3 repos. 
+Click on Trivia - FE 
+  Select the green Code button and select the two pieces of paper button to copy the http code
+  Open terminal and find the appropriate folder then type - “git clone” and paste. Then click enter. 
+Repeat the same steps for Trivia - FE and repeat within the Trivia - BE repo 

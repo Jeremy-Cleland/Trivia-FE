@@ -9,7 +9,7 @@
 }
 
 .title {
-  font-family: 'Rock Salt', cursive;
+  font-family: "Rock Salt", cursive;
   font-size: 4.2rem;
   margin: 0;
   padding-bottom: 15px;
@@ -18,7 +18,7 @@
 
 .login {
   text-align: center;
-  color: #EAE0D5;
+  color: #eae0d5;
 }
 
 .profilePic {
@@ -39,12 +39,12 @@
 }
 
 .link {
-  color: #C6AC8F;
+  color: #c6ac8f;
   padding: 2px;
 }
 
 .link:hover {
-  color: #EAE0D5;
+  color: #eae0d5;
 }
 
 .header p {

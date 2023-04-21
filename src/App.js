@@ -1,11 +1,10 @@
-import React from 'react';
-import axios from 'axios';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import styles from './App.module.css';
-import FormModal from './FormModal/FormModal';
-import GameBoard from './GameBoard/GameBoard';
+import React from "react";
+import axios from "axios";
+import "bootstrap/dist/css/bootstrap.min.css";
+import styles from "./App.module.css";
+import FormModal from "./FormModal/FormModal";
+import GameBoard from "./GameBoard/GameBoard";
 // import Header from './Header/Header';
-
 
 class App extends React.Component {
   constructor(props) {
@@ -14,25 +13,25 @@ class App extends React.Component {
       showModal: false,
       questionArray: [],
       renderedQuestionIndex: 0,
-      correctAnswers: 0
+      correctAnswers: 0,
     };
   }
 
   handleResetQuestionArray = () => {
     this.setState({
-      questionArray: []
+      questionArray: [],
     });
   };
 
   handleQuestionAdvance = () => {
     this.setState({
-      renderedQuestionIndex: this.state.renderedQuestionIndex + 1
+      renderedQuestionIndex: this.state.renderedQuestionIndex + 1,
     });
   };
 
   handleUpdateCorrectAnswers = () => {
     this.setState({
-      correctAnswers: this.state.correctAnswers + 1
+      correctAnswers: this.state.correctAnswers + 1,
     });
   };
 
@@ -42,12 +41,18 @@ class App extends React.Component {
     const formOptions = {
       category: event.target.category.value,
       numberOfQuestions: event.target.numberOfQuestions.value,
-      difficulty: event.target.difficulty.value
+      difficulty: event.target.difficulty.value,
     };
 
     let url = `https://opentdb.com/api.php?amount=${formOptions.numberOfQuestions}`;
-    url = formOptions.category === 'all' ? url : `${url}&category=${formOptions.category}`;
-    url = formOptions.difficulty === 'all' ? url : `${url}&difficulty=${formOptions.difficulty}`;
+    url =
+      formOptions.category === "all"
+        ? url
+        : `${url}&category=${formOptions.category}`;
+    url =
+      formOptions.difficulty === "all"
+        ? url
+        : `${url}&difficulty=${formOptions.difficulty}`;
 
     this.handleResetQuestionArray();
 
@@ -89,16 +94,30 @@ class App extends React.Component {
             renderedQuestionIndex={this.state.renderedQuestionIndex}
             handleQuestionAdvance={this.handleQuestionAdvance}
             correctAnswers={this.state.correctAnswers}
-            handleUpdateCorrectAnswers={this.handleUpdateCorrectAnswers} />
+            handleUpdateCorrectAnswers={this.handleUpdateCorrectAnswers}
+          />
           <button
             className={styles.startButton}
-            onClick={this.handleToggleModal}>
+            onClick={this.handleToggleModal}
+          >
             Game Options
           </button>
         </div>
         <div className={styles.info}>
-          <p><span>DESCRIPTION:</span> A game to test the mind! Battle of the Minds is a game designed to provide interacting and engaging intellectual stimulation through testing your knowledge on trivia questions in the category of the user’s choosing. Once the user selects their category, preferred number of questions and difficulty level, the battle begins!</p>
-          <p><span>INSTRUCTIONS:</span> Click on the Game Options button to get started, choose your settings, prepare your mind for battle, and unleash the trivia! Use the GitHub login at the top of the screen to have your cumalative score added to our leaderboard.</p>
+          <p>
+            <span>DESCRIPTION:</span> A game to test the mind! Battle of the
+            Minds is a game designed to provide interacting and engaging
+            intellectual stimulation through testing your knowledge on trivia
+            questions in the category of the user’s choosing. Once the user
+            selects their category, preferred number of questions and difficulty
+            level, the battle begins!
+          </p>
+          <p>
+            <span>INSTRUCTIONS:</span> Click on the Game Options button to get
+            started, choose your settings, prepare your mind for battle, and
+            unleash the trivia! Use the GitHub login at the top of the screen to
+            have your cumalative score added to our leaderboard.
+          </p>
         </div>
       </div>
     );

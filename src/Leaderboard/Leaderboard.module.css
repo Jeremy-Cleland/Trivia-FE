@@ -2,9 +2,9 @@
   padding-top: 25px;
   padding-bottom: 55px;
   text-align: center;
-  font-family: 'Rock Salt', cursive;
+  font-family: "Rock Salt", cursive;
   font-weight: bold;
-  background-color: #EAE0D5;
+  background-color: #eae0d5;
   height: 90vw;
 }
 
@@ -13,7 +13,7 @@
   justify-content: space-around;
   align-items: center;
   margin: 5px 20px;
-  border: solid #C6AC8F 1px;
+  border: solid #c6ac8f 1px;
   font-weight: bold;
 }
 

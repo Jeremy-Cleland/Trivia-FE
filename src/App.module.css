@@ -1,6 +1,6 @@
 .main {
   text-align: center;
-  background-image: url('../public/assets/minds1.png');
+  background-image: url("../public/assets/minds1.png");
   background-size: cover;
   background-repeat: no-repeat;
   overflow: auto;
@@ -39,7 +39,7 @@
   height: 100%;
 }
 .startButton:after {
-  content: '';
+  content: "";
   position: absolute;
   z-index: -1;
   transition: all 0.3s ease;

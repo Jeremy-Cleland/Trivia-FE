@@ -27,7 +27,7 @@
 }
 
 .startButton:after {
-  content: '';
+  content: "";
   position: absolute;
   z-index: -1;
   transition: all 0.3s ease;

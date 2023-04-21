@@ -1,8 +1,8 @@
-import React from 'react';
-import Modal from 'react-bootstrap/Modal';
-import { Container, Form, Button } from 'react-bootstrap';
-import styles from './FormModal.module.css';
-import categories from '../Data/triviaCategories.json';
+import React from "react";
+import Modal from "react-bootstrap/Modal";
+import { Container, Form, Button } from "react-bootstrap";
+import styles from "./FormModal.module.css";
+import categories from "../Data/triviaCategories.json";
 
 class FormModal extends React.Component {
   render() {
@@ -20,16 +20,12 @@ class FormModal extends React.Component {
           <Modal.Body className={styles.body}>
             <Container className={styles.innerbody}>
               <Form onSubmit={this.props.handleFetchQuestions}>
-                <Form.Group controlId='category'>
-                  <Form.Label className={styles.formLabel}>
-                    Category
-                  </Form.Label>
+                <Form.Group controlId="category">
+                  <Form.Label className={styles.formLabel}>Category</Form.Label>
                   <Form.Select>
                     <option value="all">Random Categories</option>
-                    {categories.trivia_categories.map(category => (
-                      <option
-                        key={category.id}
-                        value={category.id}>
+                    {categories.trivia_categories.map((category) => (
+                      <option key={category.id} value={category.id}>
                         {category.name}
                       </option>
                     ))}
@@ -44,7 +40,8 @@ class FormModal extends React.Component {
                     type="number"
                     min="1"
                     max="10"
-                    defaultValue="5" />
+                    defaultValue="5"
+                  />
                 </Form.Group>
 
                 <Form.Group controlId="difficultyLevel">
@@ -82,14 +79,10 @@ class FormModal extends React.Component {
                   />
                 </Form.Group>
 
-                <Button
-                  className={styles.gameButton1}
-                  type='submit'
-                >
+                <Button className={styles.gameButton1} type="submit">
                   Submit
                 </Button>
               </Form>
-
             </Container>
           </Modal.Body>
         </Modal>

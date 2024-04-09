@@ -13,7 +13,7 @@ class GameBoard extends React.Component {
 
   handleScoreSubmit = async (user) => {
     const savedUser = await axios(
-      `http://localhost:3001/users/${user.nickname}`
+      `http://localhost:3001/users/${user.nickname}`,
     );
     if (!savedUser.data) {
       const submittingUser = {
@@ -26,7 +26,7 @@ class GameBoard extends React.Component {
       savedUser.data.score = +savedUser.data.score + this.props.correctAnswers;
       await axios.put(
         `http://localhost:3001/users/${savedUser.data._id}`,
-        savedUser.data
+        savedUser.data,
       );
     }
   };

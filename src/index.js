@@ -14,5 +14,5 @@ root.render(
     }}
   >
     <Routes />
-  </Auth0Provider>
+  </Auth0Provider>,
 );
